@@ -1,397 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about the importance of Privacy-First Data Governance and ethical data usage in the modern digital economy. Insights for businesses and web developers.">
-    <link rel="canonical" href="https://www.novoxcore.com/blog3">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn about the importance of Privacy-First Data Governance and ethical data usage in the modern digital economy. Insights for businesses and web developers."
+    />
+    <link rel="canonical" href="https://www.novoxcore.com/blog3" />
 
     <title>Privacy-First Data Governance | Novox Core Blog</title>
 
     <!-- Fav Icon -->
-    <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
 
     <!-- Vendor CSS Files -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/vendor/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/vendor/meanmenu.min.css">
-    <link rel="stylesheet" href="assets/vendor/magnific-popup.css">
-    <link rel="stylesheet" href="assets/vendor/animate.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendor/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/vendor/meanmenu.min.css" />
+    <link rel="stylesheet" href="assets/vendor/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendor/animate.min.css" />
 
     <!-- Template Main CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <style>
-        body {
-            background-color: black;
-        }
+      body {
+        background-color: black;
+      }
 
-        .white-bullets {
-            list-style: none;
-            /* remove default bullets */
-            padding-left: 0;
-        }
+      .white-bullets {
+        list-style: none;
+        /* remove default bullets */
+        padding-left: 0;
+      }
 
-        .white-bullets li {
-            color: white;
-            position: relative;
-            padding-left: 20px;
-            /* space for custom bullet */
-            margin-bottom: 8px;
-        }
+      .white-bullets li {
+        color: white;
+        position: relative;
+        padding-left: 20px;
+        /* space for custom bullet */
+        margin-bottom: 8px;
+      }
 
-        .white-bullets li::before {
-            content: "•";
-            /* custom bullet dot */
-            color: white;
-            /* white color */
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 20px;
-            /* size of bullet */
-            line-height: 1;
-        }
+      .white-bullets li::before {
+        content: "•";
+        /* custom bullet dot */
+        color: white;
+        /* white color */
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 20px;
+        /* size of bullet */
+        line-height: 1;
+      }
     </style>
 
+    <link rel="stylesheet" href="assets/css/chat-widget.css" />
+    <meta property="og:title" content="Privacy-First Data Governance | Novox Core Blog" />
+    <meta
+      property="og:description"
+      content="Learn about the importance of Privacy-First Data Governance and ethical data usage in the modern digital economy. Insights for businesses and web developers."
+    />
+    <meta property="og:url" content="https://www.novoxcore.com/blog3" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://www.novoxcore.com/images/blogimg3.jpeg" />
+  </head>
 
-    <link rel="stylesheet" href="assets/css/chat-widget.css">
-</head>
-
-<body class="body-wrapper dark body-page-inner font-heading-sequelsans-romanbody">
-
+  <body class="body-wrapper dark body-page-inner font-heading-sequelsans-romanbody">
     <!-- Preloader -->
     <div id="preloader">
-        <div id="container" class="container-preloader">
-            <div class="animation-preloader">
-                <div class="spinner"></div>
-
-            </div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
+      <div id="container" class="container-preloader">
+        <div class="animation-preloader">
+          <div class="spinner"></div>
         </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+      </div>
     </div>
 
     <!-- Sroll to top -->
     <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-        </svg>
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+      </svg>
     </div>
 
     <!-- side toggle start -->
     <aside class="fix">
-        <div class="side-info">
-            <div class="side-info-content">
-                <div class="offset-widget offset-header">
-                    <div class="offset-logo">
-                        <a href="index.html">
-                            <img src="assets/imgs/logo/logo core.png" alt="site logo">
-                        </a>
-                    </div>
-                    <button id="side-info-close" class="side-info-close">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="mobile-menu d-xl-none fix"></div>
-                <div class="offset-button">
-                    <a href="contact.html" class="rr-btn">
-                        <span class="btn-wrap">
-                            <span class="text-one">Let's Talk</span>
-                            <span class="text-two">Let's Talk</span>
-                        </span>
-                    </a>
-                </div>
-                <div class="offset-widget-box">
-                    <h2 class="title">Contact US</h2>
-                    <div class="contact-meta">
-                        <div class="contact-item">
-                            <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-                            <span class="text">3891 Ranchview Dr. Richardson</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                            <span class="text"><a href="mailto:hello@NOVOXagency.com">hello@NOVOXagency.com</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
-                            <span class="text"><a href="tel:(505)555-0125">(505) 555-0125</a></span>
-                        </div>
-                    </div>
-                </div>
+      <div class="side-info">
+        <div class="side-info-content">
+          <div class="offset-widget offset-header">
+            <div class="offset-logo">
+              <a href="index.html">
+                <img src="assets/imgs/logo/logo core.png" alt="site logo" />
+              </a>
             </div>
+            <button id="side-info-close" class="side-info-close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="mobile-menu d-xl-none fix"></div>
+          <div class="offset-button">
+            <a href="contact.html" class="rr-btn">
+              <span class="btn-wrap">
+                <span class="text-one">Let's Talk</span>
+                <span class="text-two">Let's Talk</span>
+              </span>
+            </a>
+          </div>
+          <div class="offset-widget-box">
+            <h2 class="title">Contact US</h2>
+            <div class="contact-meta">
+              <div class="contact-item">
+                <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="text">3891 Ranchview Dr. Richardson</span>
+              </div>
+              <div class="contact-item">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <span class="text"><a href="mailto:hello@NOVOXagency.com">hello@NOVOXagency.com</a></span>
+              </div>
+              <div class="contact-item">
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <span class="text"><a href="tel:(505)555-0125">(505) 555-0125</a></span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </aside>
     <div class="offcanvas-overlay"></div>
     <!-- side toggle end -->
 
     <!-- Header area start -->
     <header class="header-area-2">
-        <div class="header-main">
-            <div class="container large">
-                <div class="header-area-2__inner">
-                    <div class="header__logo">
-                        <a href="index.html">
-                            <img src="/assets/imgs/logo/logo core.png" class="normal-logo" alt="Site Logo">
-                        </a>
-                    </div>
-                    <div class="header__nav pos-center">
-                        <nav class="main-menu">
-                            <ul>
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="about.html">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="services.html">Service</a>
-                                </li>
-                                <li>
-                                    <a href="team.html">Team</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Blog</a>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="header__button">
-                        <a href="contact.html" class="rr-btn">
-                            <span class="btn-wrap">
-                                <span class="text-one">Let's Talk</span>
-                                <span class="text-two">Let's Talk</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="header__navicon">
-                        <button class="side-toggle"><img src="assets/imgs/icon/icon-2.webp" alt="image"></button>
-                    </div>
-                </div>
+      <div class="header-main">
+        <div class="container large">
+          <div class="header-area-2__inner">
+            <div class="header__logo">
+              <a href="index.html">
+                <img src="/assets/imgs/logo/logo core.png" class="normal-logo" alt="Site Logo" />
+              </a>
             </div>
+            <div class="header__nav pos-center">
+              <nav class="main-menu">
+                <ul>
+                  <li>
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li>
+                    <a href="about.html">About Us</a>
+                  </li>
+                  <li>
+                    <a href="services.html">Service</a>
+                  </li>
+                  <li>
+                    <a href="team.html">Team</a>
+                  </li>
+                  <li>
+                    <a href="blog.html">Blog</a>
+                  </li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="header__button">
+              <a href="contact.html" class="rr-btn">
+                <span class="btn-wrap">
+                  <span class="text-one">Let's Talk</span>
+                  <span class="text-two">Let's Talk</span>
+                </span>
+              </a>
+            </div>
+            <div class="header__navicon">
+              <button class="side-toggle"><img src="assets/imgs/icon/icon-2.webp" alt="image" /></button>
+            </div>
+          </div>
         </div>
+      </div>
     </header>
     <!-- Header area end -->
 
-
-
-    </main>
-
-
     <!-- footer area start  -->
     <footer class="footer-area-inner-page section-spacing-top">
-        <div class="container large"><br>
-            <h4> Introduction</h4><br>
-            <p>In today’s digital economy,so <span style="color: aliceblue;"> data is power</span> — but with great
-                power comes great responsibility. Businesses
-                collect massive amounts of customer information every day, from contact details to behavior analytics.
-                However, as data breaches and misuse rise globally,<span style="color: aliceblue;"> data privacy
-                </span>has become a top priority for both
-                companies and consumers.</p><br>
-            <p>That’s where <span style="color: aliceblue;"> Privacy-First Data Governance </span>comes in — an approach
-                that ensures data is handled ethically,
-                transparently, and securely.</p><br>
-            <p>Leading <span style="color: aliceblue;"> Website Development Companies in Calicut </span>are now
-                integrating <span style="color: aliceblue;"> privacy-first strategiesspan </span> into their
-                web design and development processes, helping businesses stay compliant with global standards while
-                maintaining user trust.</p><br>
-            <hr>
+      <div class="container large">
+        <br />
+        <h4>Introduction</h4>
+        <br />
+        <p>
+          In today’s digital economy,so
+          <span style="color: aliceblue">data is power</span>
+          — but with great power comes great responsibility. Businesses collect massive amounts of customer information
+          every day, from contact details to behavior analytics. However, as data breaches and misuse rise globally,
+          <span style="color: aliceblue">data privacy</span>
+          has become a top priority for both companies and consumers.
+        </p>
+        <br />
+        <p>
+          That’s where
+          <span style="color: aliceblue">Privacy-First Data Governance</span>
+          comes in — an approach that ensures data is handled ethically, transparently, and securely.
+        </p>
+        <br />
+        <p>
+          Leading
+          <span style="color: aliceblue">Website Development Companies in Calicut</span>
+          are now integrating
+          <span style="color: aliceblue">privacy-first strategiesspan</span>
+          into their web design and development processes, helping businesses stay compliant with global standards while
+          maintaining user trust.
+        </p>
+        <br />
+        <hr />
 
-            <h4>What Is Privacy-First Data Governance?</h4><br>
-            <p> <span style="color: aliceblue;"> Privacy-First Data Governance </span>is a framework that focuses on
-                protecting user data from the moment it’s
-                collected to the moment it’s deleted. <br>
-                It ensures that businesses <span style="color: aliceblue;"> collect only necessary data, store it
-                    securely,</span> and use it responsibly — in
-                line with laws like<span style="color: aliceblue;"> GDPR, CCPA, and India’s Digital Personal Data
-                    Protection Act (DPDPA). </span> </p><br>
-            <h5> In simple terms:</h5>
-            <p>It’s not just about following the law — it’s about respecting user privacy as a core business value.</p>
-            <hr>
+        <h4>What Is Privacy-First Data Governance?</h4>
+        <br />
+        <p>
+          <span style="color: aliceblue">Privacy-First Data Governance</span>
+          is a framework that focuses on protecting user data from the moment it’s collected to the moment it’s deleted.
+          <br />
+          It ensures that businesses
+          <span style="color: aliceblue">collect only necessary data, store it securely,</span>
+          and use it responsibly — in line with laws like
+          <span style="color: aliceblue">GDPR, CCPA, and India’s Digital Personal Data Protection Act (DPDPA).</span>
+        </p>
+        <br />
+        <h5>In simple terms:</h5>
+        <p>It’s not just about following the law — it’s about respecting user privacy as a core business value.</p>
+        <hr />
 
-            <h5>Key Principles of Privacy-First Data Governance</h5><br>
-            <h6>1. Transparency:</h6>
-            <p>Clearly communicate what data is collected and why.</p><br>
+        <h5>Key Principles of Privacy-First Data Governance</h5>
+        <br />
+        <h6>1. Transparency:</h6>
+        <p>Clearly communicate what data is collected and why.</p>
+        <br />
 
-            <h6>2. User Consent:</h6>
-            <p>Obtain explicit permission before gathering personal information.</p><br>
+        <h6>2. User Consent:</h6>
+        <p>Obtain explicit permission before gathering personal information.</p>
+        <br />
 
-            <h6>3. Data Minimization:</h6>
-            <p>Collect only what’s necessary — nothing more.</p><br>
+        <h6>3. Data Minimization:</h6>
+        <p>Collect only what’s necessary — nothing more.</p>
+        <br />
 
-            <h6>4. Security: </h6>
-            <p>Protect data through encryption, firewalls, and access controls.</p><br>
+        <h6>4. Security:</h6>
+        <p>Protect data through encryption, firewalls, and access controls.</p>
+        <br />
 
-            <h6>5. Accountability:</h6>
-            <p>Maintain detailed audit trails and compliance documentation.</p><br>
+        <h6>5. Accountability:</h6>
+        <p>Maintain detailed audit trails and compliance documentation.</p>
+        <br />
 
-            <h6>6. Right to Access and Erasure:</h6>
-            <p>Give users the power to see or delete their data anytime.</p><br>
-            <hr>
+        <h6>6. Right to Access and Erasure:</h6>
+        <p>Give users the power to see or delete their data anytime.</p>
+        <br />
+        <hr />
 
-            <h4>Why Privacy-First Data Usage Matters for Businesses</h4><br>
-            <p>Implementing privacy-first data practices isn’t just about compliance — it’s about<span
-                    style="color: aliceblue;"> building trust </span> and <span style="color: aliceblue;"> long-term
-                    brand loyalty. </span></p><br>
-            <p>Here’s why it’s crucial:</p><br>
+        <h4>Why Privacy-First Data Usage Matters for Businesses</h4>
+        <br />
+        <p>
+          Implementing privacy-first data practices isn’t just about compliance — it’s about
+          <span style="color: aliceblue">building trust</span>
+          and
+          <span style="color: aliceblue">long-term brand loyalty.</span>
+        </p>
+        <br />
+        <p>Here’s why it’s crucial:</p>
+        <br />
 
-            <ul class="white-bullets">
-                <li>Boosts Customer Confidence – Users trust brands that protect their data.</li>
-                <li> Enhances Security – Reduces the risk of data breaches.</li>
-                <li> Improves Brand Reputation – Ethical data handling builds credibility.</li>
-                <li>Supports Compliance – Avoids penalties under data protection laws.</li>
-                <li>Encourages Transparency – Strengthens customer-business relationships.</li>
-            </ul><br>
-            <hr>
+        <ul class="white-bullets">
+          <li>Boosts Customer Confidence – Users trust brands that protect their data.</li>
+          <li>Enhances Security – Reduces the risk of data breaches.</li>
+          <li>Improves Brand Reputation – Ethical data handling builds credibility.</li>
+          <li>Supports Compliance – Avoids penalties under data protection laws.</li>
+          <li>Encourages Transparency – Strengthens customer-business relationships.</li>
+        </ul>
+        <br />
+        <hr />
 
-            <h5> How Website Development Companies in Calicut Are Leading the Way</h5><br>
-            <p>Modern <span style="color: aliceblue;"> Website Development Companies in Calicut </span>are playing a
-                vital role in promoting <span style="color: aliceblue;"> privacy-first web solutions. </span>
-                They integrate <span style="color: aliceblue;"> data governance principles </span> into every stage of
-                website and app development — from design to deployment.</p><br>
+        <h5>How Website Development Companies in Calicut Are Leading the Way</h5>
+        <br />
+        <p>
+          Modern
+          <span style="color: aliceblue">Website Development Companies in Calicut</span>
+          are playing a vital role in promoting
+          <span style="color: aliceblue">privacy-first web solutions.</span>
+          They integrate
+          <span style="color: aliceblue">data governance principles</span>
+          into every stage of website and app development — from design to deployment.
+        </p>
+        <br />
 
-            <h6>1. Secure Data Architecture</h6>
-            <p>Implementing encryption, SSL certificates, and secure APIs to ensure safe data transfer and storage.</p>
-            <br>
+        <h6>1. Secure Data Architecture</h6>
+        <p>Implementing encryption, SSL certificates, and secure APIs to ensure safe data transfer and storage.</p>
+        <br />
 
-            <h6>2. Compliance-Ready Frameworks</h6>
-            <p>Building websites compliant with <span style="color: aliceblue;"> GDPR, HIPAA, and DPDPA </span>
-                regulations.</p><br>
+        <h6>2. Compliance-Ready Frameworks</h6>
+        <p>
+          Building websites compliant with
+          <span style="color: aliceblue">GDPR, HIPAA, and DPDPA</span>
+          regulations.
+        </p>
+        <br />
 
-            <h6>3. Consent Management Systems</h6>
-            <p>Integrating cookie consent tools and user privacy dashboards that let customers control their data.</p>
-            <br>
-            <h6>4. Access Control and Monitoring</h6>
-            <p>Setting up role-based access controls (RBAC) to prevent unauthorized data exposure.</p><br>
-            <h6>5. Privacy by Design</h6>
-            <p>Embedding data protection measures during the <span style="color: aliceblue;"> initial stages of web
-                    development, </span>not after launch.</p><br>
-            <p>These proactive measures make<span style="color: aliceblue;"> Website Development Companies in Calicut
-                </span>trusted partners for businesses that value user trust and data security.</p><br>
-            <hr>
+        <h6>3. Consent Management Systems</h6>
+        <p>Integrating cookie consent tools and user privacy dashboards that let customers control their data.</p>
+        <br />
+        <h6>4. Access Control and Monitoring</h6>
+        <p>Setting up role-based access controls (RBAC) to prevent unauthorized data exposure.</p>
+        <br />
+        <h6>5. Privacy by Design</h6>
+        <p>
+          Embedding data protection measures during the
+          <span style="color: aliceblue">initial stages of web development,</span>
+          not after launch.
+        </p>
+        <br />
+        <p>
+          These proactive measures make
+          <span style="color: aliceblue">Website Development Companies in Calicut</span>
+          trusted partners for businesses that value user trust and data security.
+        </p>
+        <br />
+        <hr />
 
-            <h4>Best Practices for Businesses</h4><br>
-            <p>Even with expert development support, organizations should follow best practices to maintain
-                privacy-first governance:</p><br>
-            <ul class="white-bullets">
-                <li>Regularly audit your data collection processes.</li>
-                <li>Update privacy policies to reflect real usage.</li>
-                <li>Use anonymization or tokenization for sensitive information.</li>
-                <li>Educate employees about data protection and compliance.</li>
-                <li>Adopt zero-trust architecture for advanced security.</li>
-            </ul><br>
-            <hr>
+        <h4>Best Practices for Businesses</h4>
+        <br />
+        <p>
+          Even with expert development support, organizations should follow best practices to maintain privacy-first
+          governance:
+        </p>
+        <br />
+        <ul class="white-bullets">
+          <li>Regularly audit your data collection processes.</li>
+          <li>Update privacy policies to reflect real usage.</li>
+          <li>Use anonymization or tokenization for sensitive information.</li>
+          <li>Educate employees about data protection and compliance.</li>
+          <li>Adopt zero-trust architecture for advanced security.</li>
+        </ul>
+        <br />
+        <hr />
 
-            <h4>The Future of Privacy-First Web Development</h4><br>
-            <p>The future of digital platforms lies in <span style="color: aliceblue;"> ethical data use and transparent
-                    governance. </span>
-                With AI, IoT, and predictive technologies collecting more personal data than ever, privacy-first systems
-                will be essential. <br><br>
+        <h4>The Future of Privacy-First Web Development</h4>
+        <br />
+        <p>
+          The future of digital platforms lies in
+          <span style="color: aliceblue">ethical data use and transparent governance.</span>
+          With AI, IoT, and predictive technologies collecting more personal data than ever, privacy-first systems will
+          be essential.
+          <br />
+          <br />
 
-                Forward-thinking<span style="color: aliceblue;"> Website Development Companies in Calicut </span> are
-                already designing web ecosystems where data privacy, transparency, and compliance come standard — not as
-                add-ons. <br><br>
-                Businesses that prioritize privacy today will earn customer loyalty tomorrow.</p>
-            <hr>
+          Forward-thinking
+          <span style="color: aliceblue">Website Development Companies in Calicut</span>
+          are already designing web ecosystems where data privacy, transparency, and compliance come standard — not as
+          add-ons.
+          <br />
+          <br />
+          Businesses that prioritize privacy today will earn customer loyalty tomorrow.
+        </p>
+        <hr />
 
-            <h4> Conclusion</h4><br>
-            <p> <span style="color: aliceblue;"> Privacy-First Data Governance and Usage </span> is more than a
-                compliance requirement — it’s a commitment to ethical business practices.</p><br>
-            <p>By partnering with expert<span style="color: aliceblue;"> Website Development Companies in
-                    Calicut,</span> businesses can ensure that their websites and applications protect user data, meet
-                global privacy standards, and build trust through transparency.</p><br>
-            <p>In the digital age, privacy isn’t a feature — it’s a foundation.</p><br>
+        <h4>Conclusion</h4>
+        <br />
+        <p>
+          <span style="color: aliceblue">Privacy-First Data Governance and Usage</span>
+          is more than a compliance requirement — it’s a commitment to ethical business practices.
+        </p>
+        <br />
+        <p>
+          By partnering with expert
+          <span style="color: aliceblue">Website Development Companies in Calicut,</span>
+          businesses can ensure that their websites and applications protect user data, meet global privacy standards,
+          and build trust through transparency.
+        </p>
+        <br />
+        <p>In the digital age, privacy isn’t a feature — it’s a foundation.</p>
+        <br />
 
+        <div class="footer-top-inner">
+          <div class="footer-logo">
+            <a href="index.html"><img src="assets/imgs/logo/logo core.png" alt="site-logo" /></a>
+          </div>
 
-
-
-            <div class="footer-top-inner">
-
-                <div class="footer-logo">
-                    <a href="index.html"><img src="assets/imgs/logo/logo core.png" alt="site-logo"></a>
-
-                </div>
-
-                <div class="info-text">
-                    <div class="text-wrapper">
-                        <p class="text">NOVOX CORE is a startup digital agency of design, development and marketing that
-                            works
-                            friendly with global client</p>
-                    </div>
-                    <div class="info-link">
-                        <a href="mailto:info@NOVOX CORE.com">info@NOVOX CORE.com</a>
-                    </div>
-                </div>
+          <div class="info-text">
+            <div class="text-wrapper">
+              <p class="text">
+                NOVOX CORE is a startup digital agency of design, development and marketing that works friendly with
+                global client
+              </p>
             </div>
-            <div class="footer-widget-wrapper-box">
-                <div class="footer-widget-wrapper">
-                    <div class="footer-widget-box newsletter">
-                        <form action="#" class="subscribe-form">
-                            <div class="input-field">
-                                <input type="email" placeholder="Enter your email">
-                                <button type="submit" class="subscribe-btn"><img src="assets/imgs/icon/icon-1.webp"
-                                        alt="image"></button>
-                            </div>
-                        </form>
-                        <div class="subscription-text">
-                            <div class="text-wrapper">
-                                <p class="text">By subscribing you agree with our
-                                    <a href="#">Privacy Policy</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-widget-box">
-                        <h2 class="title">Company</h2>
-                        <ul class="footer-nav-list">
-                            <li><a href="#">agency</a></li>
-                            <li><a href="#">Solutions</a></li>
-                            <li><a href="#">Community</a></li>
-                            <li><a href="#">Work</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-widget-box">
-                        <h2 class="title">Social</h2>
-                        <ul class="footer-nav-list">
-                            <li><a href="#">Facebook</a></li>
-                            <!-- <li><a href="#">Twitter</a></li> -->
-                            <!-- <li><a href="#">Dribbble</a></li> -->
-                            <li><a href="#">Instagram</a></li>
-                            <!-- <li><a href="#">Awwwards</a></li> -->
-                            <li><a href="#">YouTube</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-widget-box">
-                        <h2 class="title">Office</h2>
-                        <ul class="footer-nav-list">
-                            <li><a href="#">Kozhikode</a></li>
-                            <!-- <li><a href="#">Bangalore</a></li> -->
-                            <!-- <li><a href="#">Mumbai</a></li> -->
-                            <!-- <li><a href="#">Ernankulam</a></li> -->
-                        </ul>
-                    </div>
-                </div>
+            <div class="info-link">
+              <a href="mailto:info@NOVOX CORE.com">info@NOVOX CORE.com</a>
             </div>
+          </div>
         </div>
-        <div class="copyright-area">
-            <div class="copyright-area-inner">
-                <div class="copyright-text">
-                    <p class="text">© 2024 <a href="https://themeforest.net/user/ravextheme">Novo x core.</a> All right
-                        reserved</p>
+        <div class="footer-widget-wrapper-box">
+          <div class="footer-widget-wrapper">
+            <div class="footer-widget-box newsletter">
+              <form action="#" class="subscribe-form">
+                <div class="input-field">
+                  <input type="email" placeholder="Enter your email" />
+                  <button type="submit" class="subscribe-btn">
+                    <img src="assets/imgs/icon/icon-1.webp" alt="image" />
+                  </button>
                 </div>
+              </form>
+              <div class="subscription-text">
+                <div class="text-wrapper">
+                  <p class="text">
+                    By subscribing you agree with our
+                    <a href="#">Privacy Policy</a>
+                  </p>
+                </div>
+              </div>
             </div>
+            <div class="footer-widget-box">
+              <h2 class="title">Company</h2>
+              <ul class="footer-nav-list">
+                <li><a href="#">agency</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-widget-box">
+              <h2 class="title">Social</h2>
+              <ul class="footer-nav-list">
+                <li><a href="#">Facebook</a></li>
+                <!-- <li><a href="#">Twitter</a></li> -->
+                <!-- <li><a href="#">Dribbble</a></li> -->
+                <li><a href="#">Instagram</a></li>
+                <!-- <li><a href="#">Awwwards</a></li> -->
+                <li><a href="#">YouTube</a></li>
+              </ul>
+            </div>
+            <div class="footer-widget-box">
+              <h2 class="title">Office</h2>
+              <ul class="footer-nav-list">
+                <li><a href="#">Kozhikode</a></li>
+                <!-- <li><a href="#">Bangalore</a></li> -->
+                <!-- <li><a href="#">Mumbai</a></li> -->
+                <!-- <li><a href="#">Ernankulam</a></li> -->
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="copyright-area">
+        <div class="copyright-area-inner">
+          <div class="copyright-text">
+            <p class="text">
+              © 2024
+              <a href="https://themeforest.net/user/ravextheme">Novo x core.</a>
+              All right reserved
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
     <!-- footer area end  -->
-
-    </div>
-    </div>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery-3.7.1.min.js"></script>
@@ -415,8 +487,6 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
-  
-  <script src="assets/js/chat-widget.js"></script>
-</body>
-
+    <script src="assets/js/chat-widget.js"></script>
+  </body>
 </html>
