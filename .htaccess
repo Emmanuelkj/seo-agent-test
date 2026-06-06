@@ -1,0 +1,26 @@
+#+PHPVersion
+#=php80
+AddHandler x-httpd-php80 .php
+#-PHPVersion
+
+DirectoryIndex index.html index.php
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force non-www
+    RewriteCond %{HTTP_HOST} ^www\.novoxcore\.com$ [NC]
+    RewriteRule ^(.*)$ https://novoxcore.com/$1 [L,R=301]
+
+    # Remove .html extension (skip if it's already a clean URL or root)
+    RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+    RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+    # Internally serve .html files for clean URLs
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.+)$ $1.html [L]
+</IfModule>

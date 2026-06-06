@@ -1,0 +1,649 @@
+/* chat-widget.css - Exactly Replicating NovoxChat React UI including Logo */
+.novox-chat-widget {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99999;
+  font-family: inherit;
+  color: #fff;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+/* Floating Teaser Bubble */
+.novox-chat-teaser {
+  margin-bottom: 24px;
+  margin-right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.2);
+  color: white;
+  width: 200px;
+  pointer-events: auto;
+  transform-origin: bottom right;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px) scale(0.8);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.novox-chat-teaser.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.novox-teaser-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.novox-teaser-header img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.novox-teaser-header h4 {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.novox-chat-teaser p {
+  font-size: 12px;
+  color: #d1d5db;
+  font-weight: 500;
+  margin: 0;
+}
+
+.novox-teaser-arrow {
+  position: absolute;
+  bottom: -8px;
+  right: 24px;
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  backdrop-filter: blur(24px);
+  pointer-events: none;
+}
+
+/* Chat Toggle Button */
+.novox-chat-toggle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: pulseShadow 4s infinite ease-in-out;
+}
+
+.novox-chat-toggle:hover {
+  transform: scale(1.08);
+}
+
+.novox-chat-toggle-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.4);
+  filter: blur(20px);
+  animation: pulseGlow 2s infinite;
+}
+
+.novox-chat-toggle img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  position: relative;
+  z-index: 10;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.novox-chat-toggle.open-state {
+  width: 56px;
+  height: 56px;
+  animation: none;
+  box-shadow: none;
+}
+
+.novox-chat-toggle.open-state:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.novox-chat-toggle.open-state svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  position: relative;
+  z-index: 10;
+}
+
+/* Chat Window Container */
+.novox-chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 340px;
+  height: 560px;
+  max-height: 100vh;
+  background: rgba(11, 9, 20, 0.95);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px -15px rgba(0,0,0,0.7), 0 0 30px rgba(139,92,246,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.95);
+  transform-origin: bottom right;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  z-index: 95;
+}
+
+.novox-chat-window.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* Header */
+.novox-chat-header {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.novox-chat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.novox-chat-header-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.novox-chat-header-icon img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.novox-chat-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.novox-chat-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.novox-chat-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.novox-status-dot {
+  color: #22c55e;
+  font-size: 9px;
+}
+
+.novox-status-text {
+  font-size: 10px;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.novox-chat-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.novox-chat-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.novox-chat-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Messages Area */
+.novox-chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.novox-chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+.novox-chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Empty State */
+.novox-empty-state {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
+.novox-greeting-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+  min-height: 28px;
+  margin-top: 8px;
+}
+
+.novox-greeting-subtitle {
+  font-size: 15px;
+  color: #d1d5db;
+  font-weight: 500;
+  margin-bottom: 16px;
+  min-height: 24px;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards 0.8s;
+}
+
+.novox-quick-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards 1.2s;
+}
+
+.novox-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.novox-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.3);
+}
+
+.novox-card-icon {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.novox-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.novox-card-desc {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.3;
+}
+
+/* Message Bubbles */
+.novox-message-wrapper {
+  display: flex;
+  gap: 12px;
+  max-width: 85%;
+  animation: slideUp 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.novox-message-wrapper.user {
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+
+.novox-message-wrapper.bot {
+  margin-right: auto;
+}
+
+.novox-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.novox-avatar.user {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  font-size: 12px;
+}
+
+.novox-avatar.bot {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.novox-avatar.bot img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.novox-message {
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+.novox-message-wrapper.user .novox-message {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  border-radius: 16px 16px 4px 16px;
+}
+
+.novox-message-wrapper.bot .novox-message {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  color: white;
+  border-radius: 16px 16px 16px 4px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+/* Input Area */
+.novox-chat-input-area {
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  gap: 0;
+  align-items: center;
+  backdrop-filter: blur(24px);
+  flex-shrink: 0;
+}
+
+.novox-chat-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.novox-chat-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 48px 10px 16px;
+  border-radius: 9999px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.novox-chat-input:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.5), inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.novox-chat-input::placeholder {
+  color: #9ca3af;
+}
+
+.novox-chat-send {
+  position: absolute;
+  right: 6px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.novox-chat-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.novox-chat-send:hover:not(:disabled) {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+}
+
+.novox-chat-send svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-left: -2px;
+}
+
+/* Typing Indicator */
+.typing-indicator-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px 16px 16px 4px;
+  width: fit-content;
+  backdrop-filter: blur(24px);
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background: #a78bfa;
+  border-radius: 50%;
+  animation: reactTypingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes reactTypingBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-5px); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseShadow {
+  0%, 100% { box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2); }
+  50% { box-shadow: 0 10px 50px rgba(139, 92, 246, 0.4); }
+}
+
+/* Staggered Children Animation */
+.novox-chat-window .novox-chat-header,
+.novox-chat-window .novox-chat-messages,
+.novox-chat-window .novox-chat-input-area {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease-out;
+}
+
+.novox-chat-window.active .novox-chat-header {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.novox-chat-window.active .novox-chat-messages {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.novox-chat-window.active .novox-chat-input-area {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+/* Intro Animation Overlay */
+.novox-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(11, 9, 20, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+
+.novox-intro-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.novox-intro-glow {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background: #8b5cf6;
+  filter: blur(60px);
+  border-radius: 50%;
+  animation: introGlowPulse 3s infinite ease-in-out;
+}
+
+.novox-intro-logo {
+  position: relative;
+  z-index: 10;
+  width: 320px;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));
+  transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.novox-flash-ring {
+  position: absolute;
+  inset: 0;
+  background: #a78bfa;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.novox-flash-ring.flash {
+  animation: flashExplode 1s ease-out forwards;
+}
+
+@keyframes flashExplode {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes introGlowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.05); opacity: 0.5; }
+}
+
+@media (min-width: 768px) {
+  .novox-intro-logo { width: 420px; }
+}
+
+@media (max-width: 768px) {
+  .novox-chat-window {
+    width: 100%;
+    height: 100dvh;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+  }
+}
